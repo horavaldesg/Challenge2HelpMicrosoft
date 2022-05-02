@@ -44,6 +44,8 @@ public class ControlPanel extends JPanel{
 						String content = textfield.getText();
 						if(!content.equals(""))
 						{
+							SubprocessClient subProcess = new SubprocessClient();
+							subProcess.SetMessage(content);
 							return;
 						}
 						else

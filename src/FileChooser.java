@@ -29,6 +29,7 @@ public class FileChooser
 			
 			File selectedFile = jfc.getSelectedFile();
 			SubprocessClient subProcessClient = new SubprocessClient();
+			subProcessClient.setPath(selectedFile.getAbsolutePath());
 			subProcessClient.CreateRepo(selectedFile.getAbsolutePath());
 			String repoPath = selectedFile.getAbsolutePath().toString();
 			//subprocessClient.CreateRepo(repoPath);

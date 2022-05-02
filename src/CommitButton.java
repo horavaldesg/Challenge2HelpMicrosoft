@@ -15,7 +15,8 @@ public class CommitButton extends JButton{
 	private class CommitListener implements ActionListener {
 		public void actionPerformed(ActionEvent e)
 		{
-			
+			SubprocessClient subProcess = new SubprocessClient();
+			subProcess.GitCommit();
 		}
 	}
 

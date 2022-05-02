@@ -1,1 +1,11 @@
-Files in Java might be tricky, but it is fun enough!
+.project
+.classpath
+*.class
+bin/
+.settings/
+.idea/
+*.iml
+.DS_Store
+out/
+.vscode/extensions.json
+/.metadata/

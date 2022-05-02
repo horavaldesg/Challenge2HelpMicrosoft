@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import git.tools.client.Subprocess;
+
 public class textField implements ActionListener
 {
 	static JTextField t;
@@ -56,7 +58,8 @@ public class textField implements ActionListener
 		if(s.equals("submit"))
 		{
 			l.setText(t.getText());
-			
+			SubprocessClient subProcess = new SubprocessClient();
+			subProcess.SetMessage(t.getText());
 			t.setText("  ");
 		}
 	}

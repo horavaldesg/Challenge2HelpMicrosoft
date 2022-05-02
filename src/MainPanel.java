@@ -12,7 +12,6 @@ public class MainPanel extends JPanel{
 		_cp = new ControlPanel();
 		_tf = new textField();
 		_fc = new FileChooser();
-		
 		this.add(_dp);
 		this.add(_cp);
 	}
