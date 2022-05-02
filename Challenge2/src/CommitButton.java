@@ -6,17 +6,17 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class QuitButton extends JButton{
+public class CommitButton extends JButton{
 
-	public QuitButton() {
-		super("Quit");
-		this.addActionListener(new QuitListener());
+	public CommitButton() {
+		super("Commit");
+		this.addActionListener(new CommitListener());
 	}
 	
-	private class QuitListener implements ActionListener {
+	private class CommitListener implements ActionListener {
 		public void actionPerformed(ActionEvent e)
 		{
-			System.exit(0);  // exit program
+			
 		}
 	}
 

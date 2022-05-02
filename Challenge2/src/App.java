@@ -1,3 +1,5 @@
+package Challenge2.src;
+
 import javax.swing.JFrame;
 
 public class App extends JFrame {

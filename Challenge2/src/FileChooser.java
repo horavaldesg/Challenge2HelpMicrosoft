@@ -1,3 +1,5 @@
+package Challenge2.src;
+
 
 
 import java.io.File;
@@ -10,8 +12,8 @@ public class FileChooser
 	
 	public FileChooser()
 	{
-		SubprocessClient subprocessClient;
-		subprocessClient = new SubprocessClient();
+		//SubprocessClient subprocessClient;
+		//subprocessClient = new SubprocessClient();
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setDialogTitle("Choose a place to save");
 		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -28,7 +30,7 @@ public class FileChooser
 			
 			File selectedFile = jfc.getSelectedFile();
 			String repoPath = selectedFile.getAbsolutePath().toString();
-			subprocessClient.CreateRepo(repoPath);
+			//subprocessClient.CreateRepo(repoPath);
 			System.out.println(selectedFile.getAbsolutePath());
 		}
 	}
