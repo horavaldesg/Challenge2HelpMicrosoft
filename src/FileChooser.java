@@ -8,9 +8,9 @@ import javax.swing.filechooser.FileSystemView;
 
 public class FileChooser 
 {
+	
 	public FileChooser()
 	{
-
 		//SubprocessClient subprocessClient;
 		//subprocessClient = new SubprocessClient();
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
