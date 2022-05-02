@@ -64,9 +64,9 @@ public class App extends JFrame implements ActionListener{
 	public void addComponents()
 	{
 		container.add(userLabel);
-		container.add(passwordLabel);
+//		container.add(passwordLabel);
 		container.add(userTextField);
-		container.add(passwordTextField);
+//		container.add(passwordTextField);
 		container.add(showPassword);
 		container.add(loginButton);
 		container.add(resetButton);
@@ -89,15 +89,13 @@ public class App extends JFrame implements ActionListener{
 			String pwdText;
 			userText = userTextField.getText();
 			pwdText = passwordTextField.getText();;
-			if(userText.equalsIgnoreCase(userUsername) && pwdText.equalsIgnoreCase(userPassword))
-			{
+			SubprocessClient subProcess = new SubprocessClient();
+			subProcess.SetUserName(userText);
 				JOptionPane.showMessageDialog(this, "Login Successful");
 				this.add(new MainPanel());
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(this, "Invalid Username or Password");
-			}
+			
+				
+			
 		}
 		
 		if(e.getSource() == resetButton)

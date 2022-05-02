@@ -15,8 +15,8 @@ public class SubprocessClient{
     public void CreateRepo(String repoPath){
     	gitSubprocessClient  = new GitSubprocessClient(repoPath);
     	String gitInit = gitSubprocessClient.gitInit();
-    	userName = "";
     	remote = "https://github.com/" + userName + "/" + repoPath + ".git";
+    	
        
         
     	String gitRemoteAdd = gitSubprocessClient.gitRemoteAdd("origin", remote);
@@ -95,5 +95,11 @@ public class SubprocessClient{
     }
     public void SetMessage(String message) {
     	commitMessage = message;
+    }
+    
+    public void SetUserName(String _usrName) {
+    	userName = _usrName;
+    	System.out.println(remote);
+    	
     }
 }
