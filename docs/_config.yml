@@ -1,0 +1,5 @@
+name: MicrosoftSetUp
+title: null
+plugins:
+  - jemoji
+  theme: jekyll-theme-hacker 
