@@ -96,9 +96,10 @@ public class App extends JFrame implements ActionListener{
 			System.out.println(userText);
 			this.getContentPane().removeAll();
 			this.getContentPane().add(new MainPanel());
-			this.getContentPane().add(new ControlPanel());
+			
+			this.setSize(1280, 720);
 			this.revalidate();
-			this.pack();
+			//this.pack();
 			
 		}
 		
