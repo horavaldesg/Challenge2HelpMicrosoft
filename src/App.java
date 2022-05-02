@@ -26,6 +26,7 @@ public class App extends JFrame implements ActionListener{
 	JButton resetButton = new JButton("RESET");
 	JCheckBox showPassword = new JCheckBox("Show Password");
 	
+	private ControlPanel _cp;
 	
 	public App() {
 		// Makes the name of the panel
@@ -38,7 +39,6 @@ public class App extends JFrame implements ActionListener{
 		
 		// sets the frame size
 		this.setSize(1280, 720);
-		
 		// adds an exit button to the frame
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -86,15 +86,17 @@ public class App extends JFrame implements ActionListener{
 		if(e.getSource() == loginButton)
 		{
 			String userText;
-			String pwdText;
+			//String pwdText;
 			userText = userTextField.getText();
-			pwdText = passwordTextField.getText();;
+			//pwdText = passwordTextField.getText();;
 			SubprocessClient subProcess = new SubprocessClient();
 			subProcess.SetUserName(userText);
-				JOptionPane.showMessageDialog(this, "Login Successful");
-				this.add(new MainPanel());
+			JOptionPane.showMessageDialog(this, "Login Successful");
 			
-				
+			this.getContentPane().removeAll();
+			this.getContentPane().add(new ControlPanel());
+			this.revalidate();
+			this.pack();
 			
 		}
 		

@@ -16,8 +16,10 @@ public class ControlPanel extends JPanel{
 	 public ControlPanel () {
 		 super();
 		 
-		 this.add(new QuitButton());
-		 this.add(new CommitButton());
+		// sets the frame size
+		this.setSize(1280, 720);
+		this.add(new QuitButton());
+		this.add(new CommitButton());
 		 
 		JTextField textfield = new JTextField("Enter Text", 16);
 		textfield.addKeyListener(new KeyAdapter()
@@ -88,5 +90,10 @@ public class ControlPanel extends JPanel{
 	public void SetBranchName(String _branchName){
 		branchName = _branchName;
 		System.out.println(branchName);
+	}
+	
+	public void buildPanel()
+	{
+		this.add(new ControlPanel());
 	}
 }
