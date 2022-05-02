@@ -7,11 +7,8 @@ import javax.swing.filechooser.FileSystemView;
 
 public class FileChooser 
 {
-	
 	public FileChooser()
 	{
-		SubprocessClient subprocessClient;
-		subprocessClient = new SubprocessClient();
 		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		jfc.setDialogTitle("Choose a place to save");
 		jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -27,8 +24,8 @@ public class FileChooser
 			}
 			
 			File selectedFile = jfc.getSelectedFile();
-			String repoPath = selectedFile.getAbsolutePath().toString();
-			subprocessClient.CreateRepo(repoPath);
+			SubprocessClient subProcessClient = new SubprocessClient();
+			subProcessClient.CreateRepo(selectedFile.getAbsolutePath());
 			System.out.println(selectedFile.getAbsolutePath());
 		}
 	}
