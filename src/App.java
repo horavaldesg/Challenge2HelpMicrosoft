@@ -90,9 +90,10 @@ public class App extends JFrame implements ActionListener{
 			userText = userTextField.getText();
 			//pwdText = passwordTextField.getText();;
 			SubprocessClient subProcess = new SubprocessClient();
-			subProcess.SetUserName(userText);
-			JOptionPane.showMessageDialog(this, "Login Successful");
 			
+			JOptionPane.showMessageDialog(this, "Login Successful");
+			subProcess.SetUserName(userText);
+			System.out.println(userText);
 			this.getContentPane().removeAll();
 			this.getContentPane().add(new MainPanel());
 			this.getContentPane().add(new ControlPanel());
