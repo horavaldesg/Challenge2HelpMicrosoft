@@ -11,10 +11,8 @@ public class appPanel extends JPanel {
 		// add the JLabel and JButton to the panel
 		this.add(label);
 		this.add(button);
-		
-		 super();
 		 
-		 this.add(new QuitButton());
+		this.add(new QuitButton());
 		
 	}
 }
