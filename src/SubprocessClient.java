@@ -23,12 +23,13 @@ public class SubprocessClient{
 
         System.out.println(("File Chosen: " + repoPath));
         
-        String folder = repoPath;  // <-- CHANGE THIS ONE TO YOUR FOLDER
+        String folder = repoPath; 
         String gitignore = ".gitignore";
-        // create Paths from the Strings, the gitignorePath is the full path for the file
+        String ReadMe = "README.md";
         Path folderPath = Paths.get(folder);
-        Path gitignorPath = folderPath.resolve(gitignore);
-        // create some content to be written to .gitignore
+        Path gitignorePath = folderPath.resolve(gitignore);
+        Path ReadMePath = folderPath.resolve(ReadMe);
+
         List<String> lines = new ArrayList<>();
         lines.add("# folders to be ignored");
         lines.add("**/logs");
@@ -41,10 +42,12 @@ public class SubprocessClient{
         lines.add(".DS_Store");
         lines.add(".vscode/extensions.json");
         lines.add("/.metadata/");
-
+        List<String> readMeText = new ArrayList<>();
+        readMeText.add(repoPath);
         try {
-            // write the file along with its content
-            Files.write(gitignorPath, lines);
+
+        	Files.write(gitignorePath, lines);
+            Files.write(ReadMePath, readMeText);
         } catch (IOException e) {
             e.printStackTrace();
         }
