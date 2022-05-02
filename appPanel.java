@@ -12,5 +12,9 @@ public class appPanel extends JPanel {
 		this.add(label);
 		this.add(button);
 		
+		 super();
+		 
+		 this.add(new QuitButton());
+		
 	}
 }
