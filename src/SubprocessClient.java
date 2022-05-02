@@ -1,4 +1,6 @@
 import git.tools.client.GitSubprocessClient;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,12 +17,14 @@ public class SubprocessClient{
     public void CreateRepo(String repoPath){
     	gitSubprocessClient  = new GitSubprocessClient(repoPath);
     	String gitInit = gitSubprocessClient.gitInit();
-    	remote = "https://github.com/" + userName + repoPath + ".git";
     	
-    	System.out.println("Remote: " +remote);
-        
+    	File remoteFile = new File(repoPath);
+    	String remoteName = remoteFile.getName();
+    	System.out.println(remoteName);
+    	
+    	remote = "https://github.com/" + userName + "/" + remoteName;
     	String gitRemoteAdd = gitSubprocessClient.gitRemoteAdd("origin", remote);
-
+    	System.out.println("Remote: " +gitRemoteAdd);
         System.out.println(("File Chosen: " + repoPath));
         
         String folder = repoPath; 
