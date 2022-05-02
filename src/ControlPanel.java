@@ -18,6 +18,7 @@ public class ControlPanel extends JPanel{
 		 
 		// sets the frame size
 		this.setSize(1280, 720);
+		this.setBounds(0, 0, 1280, 720);
 		this.add(new QuitButton());
 		this.add(new CommitButton());
 		 
@@ -46,6 +47,8 @@ public class ControlPanel extends JPanel{
 		this.validate();
 		this.repaint();
 		this.add(new FetchAll());
+		this.revalidate();
+
 	 }
 	 private Component BranchName() {
 		 

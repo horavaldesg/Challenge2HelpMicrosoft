@@ -94,6 +94,7 @@ public class App extends JFrame implements ActionListener{
 			JOptionPane.showMessageDialog(this, "Login Successful");
 			
 			this.getContentPane().removeAll();
+			this.getContentPane().add(new MainPanel());
 			this.getContentPane().add(new ControlPanel());
 			this.revalidate();
 			this.pack();
