@@ -1,7 +1,10 @@
 import git.tools.client.GitSubprocessClient;
-import java.io.File;
 import java.io.IOException;
-import java.io.FileWriter;   
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SubprocessClient{
 	public static String path;
@@ -19,35 +22,32 @@ public class SubprocessClient{
     	String gitRemoteAdd = gitSubprocessClient.gitRemoteAdd("origin", remote);
 
         System.out.println(("File Chosen: " + repoPath));
-        boolean dirFlag = false;
         
-        File gitIgnore = new File(repoPath, ".gitIgnore");
-        
+        String folder = repoPath;  // <-- CHANGE THIS ONE TO YOUR FOLDER
+        String gitignore = ".gitignore";
+        // create Paths from the Strings, the gitignorePath is the full path for the file
+        Path folderPath = Paths.get(folder);
+        Path gitignorPath = folderPath.resolve(gitignore);
+        // create some content to be written to .gitignore
+        List<String> lines = new ArrayList<>();
+        lines.add("# folders to be ignored");
+        lines.add("**/logs");
+        lines.add("**/classpath");
+        lines.add(".project");
+        lines.add("*.class");
+        lines.add("bin/");
+        lines.add(".settings/");
+        lines.add(".idea/");
+        lines.add(".DS_Store");
+        lines.add(".vscode/extensions.json");
+        lines.add("/.metadata/");
+
         try {
-           dirFlag = gitIgnore.mkdir();
-           FileWriter gitWriter = new FileWriter(".gitIgnore");
-           gitWriter.write(".project\n"
-           		+ ".classpath\n"
-           		+ "*.class\n"
-           		+ "bin/\n"
-           		+ ".settings/\n"
-           		+ ".idea/\n"
-           		+ "*.iml\n"
-           		+ ".DS_Store\n"
-           		+ "out/\n"
-           		+ ".vscode/extensions.json\n"
-           		+ "/.metadata/\n"
-           		+ "");
-           gitWriter.close();
-            if (gitIgnore.createNewFile()) {
-              System.out.println("File created: " + gitIgnore.getName());
-            } else {
-              System.out.println("File already exists.");
-            }
-          } catch (IOException e) {
-            System.out.println("An error occurred.");
+            // write the file along with its content
+            Files.write(gitignorPath, lines);
+        } catch (IOException e) {
             e.printStackTrace();
-          }
+        }
 //        System.out.println(gitSubprocessClient.gitStatus());
         }
         
