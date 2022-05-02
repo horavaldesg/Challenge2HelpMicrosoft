@@ -1,4 +1,4 @@
-# Challenge2HelpMicrosoft
+# Challenge2: HelpMicrosoft
 Team members: Serena Havunen, Horacio Valdes, Mario Egocheaga, Aiden Moriarty
 
 This is a GUI-based application that will automate the process of putting 
