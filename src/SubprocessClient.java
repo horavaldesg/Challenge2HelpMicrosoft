@@ -70,13 +70,25 @@ public class SubprocessClient{
     
     public void GitStatus() {
     	String status = this.gitSubprocessClient.gitStatus();
+    	ControlPanel statusField = new ControlPanel();
+    	statusField.SetStatus(status);
 //    	System.out.println(remote);    
     	}
+    
+    public void GitFetch() {
+    	String fetch = gitSubprocessClient.gitFetchAll();
+    	System.out.println(fetch);
+    }
     public void setPath(String path) {
     	this.path = path;
     }
     public String getPath() {
     	return this.path;
+    }
+    public void GetBranchName() {
+    	String branchName = gitSubprocessClient.getCurrentBranchName();
+    	ControlPanel branch = new ControlPanel();
+    	branch.SetBranchName(branchName);
     }
     public void SetMessage(String message) {
     	commitMessage = message;

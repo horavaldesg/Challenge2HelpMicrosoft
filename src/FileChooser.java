@@ -31,6 +31,7 @@ public class FileChooser
 			SubprocessClient subProcessClient = new SubprocessClient();
 			subProcessClient.setPath(selectedFile.getAbsolutePath());
 			subProcessClient.CreateRepo(selectedFile.getAbsolutePath());
+			subProcessClient.GitStatus();
 			String repoPath = selectedFile.getAbsolutePath().toString();
 			//subprocessClient.CreateRepo(repoPath);
 			System.out.println(selectedFile.getAbsolutePath());
