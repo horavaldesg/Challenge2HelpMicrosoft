@@ -3,7 +3,7 @@ Team members: Serena Havunen, Horacio Valdes, Mario Egocheaga, Aiden Moriarty
 
 ![Microsoft](./assets/images/microsoft.jpg)
 
- ### Description of our prototype
+### Description of our prototype
 -Our team has created a GUI-based application that automates the process of putting an existing project on a computer up to a user's GitHub. Our program carries out the following steps: 
 
 1. Turns an existing project into a Git repo 
